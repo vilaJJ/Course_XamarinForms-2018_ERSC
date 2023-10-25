@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "T03zKin6V0pTMxKFkJHtu84B6YIncQqJnrwBW7JzYpujQ2XcY7zQisDmFy1JQe/sGv7+ax9pblMnriQQfEnumQ==",
+  "success": true,
+  "projectFilePath": "C:\\Estudos\\XF\\S6\\TipoPaginaXF\\TipoPaginaXF\\TipoPaginaXF.iOS\\TipoPaginaXF.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vilar\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\vilar\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\vilar\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TipoPaginaXF.TipoPagina.Carousel.Pages.TipoPagina3"
-             BackgroundColor="LightBlue">
+             BackgroundColor="LightBlue" 
+             IconImageSource="Page.png" >
     <ContentPage.Content>
         <StackLayout
             VerticalOptions="CenterAndExpand" >
@@ -13,7 +14,8 @@
                 TextColor="Blue"
                 HorizontalOptions="CenterAndExpand" />
 
-            <Button 
+            <Button
+                Clicked="MudarPagina"
                 BackgroundColor="Transparent"
                 Margin="50"
                 ImageSource="Play.png" />

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipoPaginaXF.TipoPagina.Navigation.Pages.Pagina2" 
+             Title="Página 2"
+             BackgroundColor="LightBlue"
+             IconImageSource="xamarin_logo.png" >
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+                Text="Eu sou a Segunda Página!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                TextColor="Blue" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipoPaginaXF.TipoPagina.Navigation.Pages.Pagina1" 
+             Title="Título da Navigation" 
+             IconImageSource="play.png" 
+             BackgroundColor="LightBlue" >
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" >
+            
+            <Label 
+                HorizontalOptions="CenterAndExpand"
+                TextColor="Blue"
+                Text="Eu sou uma ContentPage!" />
+
+            <Button 
+                Margin="20"
+                Padding="25"
+                BackgroundColor="CadetBlue"
+                Text="Ir para a Página 2"
+                Clicked="MudarParaPagina2" />
+
+            <Button 
+                Margin="20"
+                Padding="25"
+                BackgroundColor="CadetBlue"
+                Text="Ir para a MasterDetail"
+                Clicked="MudarParaMasterDetail" />
+
+            <Button 
+                Text="Chamar Modal"
+                Clicked="ChamarModal" />
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            IconImageSource="play.png"
+            Text="Play" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

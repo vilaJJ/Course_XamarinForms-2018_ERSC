@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pag="clr-namespace:XamarinLayouts.Pages"
+            x:Class="XamarinLayouts.Master.Menu" >
+
+    <MasterDetailPage.Master>
+        <!-- Menu -->
+
+        <ContentPage
+            BackgroundColor="#0D1F2D"
+            Title="Menu" >
+
+            <StackLayout>
+                <StackLayout
+                    Padding="30"
+                    BackgroundColor="#FFC926">
+
+                    <Image 
+                        Source="Logo.png"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+                </StackLayout>
+
+                <ScrollView
+                    Orientation="Vertical">
+
+                    <StackLayout>
+                        <Button 
+                            Clicked="GoToPage1"
+                            BackgroundColor="Transparent"
+                            FontSize="24"
+                            TextColor="White"
+                            Padding="0, 40"
+                            Text="Miguel de Icaza" />
+
+                        <Button 
+                            BackgroundColor="Transparent"
+                            FontSize="24"
+                            TextColor="White"
+                            Padding="0, 40"
+                            Text="Joseph Hill" />
+
+                        <Button 
+                            BackgroundColor="Transparent"
+                            FontSize="24"
+                            TextColor="White"
+                            Padding="0, 40"
+                            Text="Nat Friedman" />
+
+                        <Button
+                            Clicked="GoToXamarinPage"
+                            BackgroundColor="Transparent"
+                            FontSize="24"
+                            TextColor="White"
+                            Padding="0, 40"
+                            Text="Xamarin" />
+                    </StackLayout>
+                </ScrollView>
+                
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <!-- Páginas -->
+
+        <NavigationPage
+            BarTextColor="Black">
+            <x:Arguments>
+                <pag:Perfil1 />
+            </x:Arguments>
+        </NavigationPage>
+        
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

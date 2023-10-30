@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLayouts.Pages.Perfil1" 
+             Title="Miguel de Icaza" >
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                Spacing="0">
+
+                <RelativeLayout
+                    VerticalOptions="Start"
+                    HeightRequest="300" >
+
+                    <Image 
+                        RelativeLayout.WidthConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1
+                        }"
+                        Source="Fundo.png" />
+
+                    <Image 
+                        RelativeLayout.XConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=0.5,
+                                Constant=-60
+                        }"
+                        RelativeLayout.YConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.2
+                        }"
+                        x:Name="FotoPerfil"
+                        WidthRequest="120"
+                        Source="Perfil.png" />
+
+                    <Label 
+                        RelativeLayout.WidthConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1
+                        }"
+                        RelativeLayout.YConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=FotoPerfil,
+                                Property=Y,
+                                Factor=1,
+                                Constant=190
+                        }"
+                        TextColor="#1D1C1C"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text="Miguel de Icaza"/>
+                </RelativeLayout>
+
+                <Grid
+                    HeightRequest="120"
+                    BackgroundColor="#0D1F2D" >
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <StackLayout 
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        HorizontalOptions="CenterAndExpand" 
+                        VerticalOptions="CenterAndExpand" >
+                        
+                        <Label 
+                            TextColor="White"
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text="18" />
+
+                        <Label 
+                            TextColor="White"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="anos" />
+                    </StackLayout>
+
+                    <StackLayout 
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HorizontalOptions="CenterAndExpand" 
+                        VerticalOptions="CenterAndExpand" >
+
+                        <Label 
+                            TextColor="White"
+                            FontSize="24"
+                            HorizontalTextAlignment="Center"
+                            Text="10/01/2000" />
+
+                        <Label 
+                            TextColor="White"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="nasceu" />
+                    </StackLayout>
+                </Grid>
+
+                <StackLayout
+                    Padding="30"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand" >
+
+                    <Label 
+                        TextColor="#1D1C1C"
+                        FontSize="16"
+                        x:Name="LabelSobre" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView> 
+    </ContentPage.Content>
+</ContentPage>

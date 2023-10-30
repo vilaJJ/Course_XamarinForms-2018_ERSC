@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LayoutXF.Layouts.Scroll.ScrollPage"
+             Title="ScrollView"
+             BackgroundColor="White" >
+    <ContentPage.Content>
+        <ScrollView
+            Orientation="Both">
+
+            <StackLayout
+                BackgroundColor="Gray"
+                WidthRequest="500" 
+                HeightRequest="1000" >
+
+                <Label 
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White"
+                    Text="Utilizando ScrollView!" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

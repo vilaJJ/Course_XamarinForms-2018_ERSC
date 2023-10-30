@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LayoutXF.MainPage"
+             Title="Layouts no Xamarin.Forms" >
+
+    <StackLayout 
+        Margin="20"
+        BackgroundColor="White"
+        VerticalOptions="CenterAndExpand" >
+
+        <Button
+            Text="Página Absolute" 
+            Clicked="GoPaginaAbsolute" 
+            Margin="15" />
+        
+        <Button 
+            Text="Página Grid" 
+            Clicked="GoPaginaGrid" 
+            Margin="15" />
+
+        <Button 
+            Text="Página Relative" 
+            Clicked="GoPaginaRelative"
+            Margin="15" />
+        
+        <Button 
+            Text="Página Scroll" 
+            Clicked="GoPaginaScroll" 
+            Margin="15" />
+        
+        <Button 
+            Text="Página Stack" 
+            Clicked="GoPaginaStack" 
+            Margin="15" />
+    </StackLayout>
+
+</ContentPage>

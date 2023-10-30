@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinLayouts.Pages.Xamarin"
+             Title="Xamarin" >
+    <ContentPage.Content>
+        <StackLayout
+            Spacing="0" >
+            <StackLayout
+                Padding="30"
+                BackgroundColor="#FFC926" >
+
+                <Image 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="Logo.png" />
+            </StackLayout>
+
+            <StackLayout
+                Padding="30"
+                BackgroundColor="#0D1F2D"
+                HeightRequest="100" >
+
+                <Label 
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="White"
+                    FontSize="48"
+                    Text="Xamarin" />
+            </StackLayout>
+
+            <StackLayout
+                Padding="15, 30"
+                Orientation="Horizontal" >
+
+                <RelativeLayout
+                    HorizontalOptions="FillAndExpand" >
+                    <BoxView 
+                        x:Name="Box1"
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        BackgroundColor="#0D1F2D" />
+
+                    <BoxView 
+                        x:Name="Box2"
+                        RelativeLayout.XConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=Box1,
+                                Property=X,
+                                Factor=1,
+                                Constant=12
+                        }"
+                        RelativeLayout.YConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=Box1,
+                                Property=Y,
+                                Factor=1,
+                                Constant=12
+                        }"
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        BackgroundColor="#25567E" />
+
+                    <BoxView 
+                        RelativeLayout.XConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=Box2,
+                                Property=X,
+                                Factor=1,
+                                Constant=12
+                        }"
+                        RelativeLayout.YConstraint="{
+                            ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=Box2,
+                                Property=Y,
+                                Factor=1,
+                                Constant=12
+                        }"
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        BackgroundColor="#4E93CB" />
+                </RelativeLayout>
+                
+                <Label 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    TextColor="Black"
+                    FontSize="32"
+                    Text="Empresa" /> 
+            </StackLayout>
+
+            <StackLayout
+                Padding="15" >
+                
+                <Label 
+                    TextColor="#1D1C1C"
+                    FontSize="16"
+                    x:Name="LabelXamarin" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

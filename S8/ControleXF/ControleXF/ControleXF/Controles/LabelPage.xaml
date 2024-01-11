@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout"
+             x:Class="ControleXF.Controles.LabelPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+                Text="'Through the Wire' is the debut solo single by American rapper and producer Kanye West, who wrote and recorded the song with his jaw wired shut after a car crash on October 23rd 2002. The song samples Chaka Khan's 1985 single 'Through the Fire' and was released on the last day of September 2003 as the lead single from his debut album The College Dropout (2004)."
+                TextColor="White"
+                FontSize="Body"
+                FontAttributes="Italic"
+                LineBreakMode="WordWrap"
+                HorizontalTextAlignment="Start"
+                
+                BackgroundColor="Black"                
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

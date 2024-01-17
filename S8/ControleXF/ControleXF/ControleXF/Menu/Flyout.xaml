@@ -27,7 +27,19 @@
 
                 <Button 
                     Text="Button"
-                    Clicked="GoToButtonPage"/>
+                    Clicked="GoToButtonPage" />
+
+                <Button 
+                    Text="Entry/Editor"
+                    Clicked="GoToEntryEditorPage" />
+
+                <Button 
+                    Text="DatePicker"
+                    Clicked="GoToDatePickerPage" />
+
+                <Button 
+                    Text="TimePicker"
+                    Clicked="GoToTimePickerPage" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

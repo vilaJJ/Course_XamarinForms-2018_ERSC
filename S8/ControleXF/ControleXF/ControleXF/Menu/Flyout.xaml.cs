@@ -38,5 +38,20 @@ namespace ControleXF.Menu
         {
             Detail = new ButtonPage();
         }
+
+        private void GoToEntryEditorPage(object sender, EventArgs e)
+        {
+            Detail = new EntryEditorPage();
+        }
+
+        private void GoToDatePickerPage(object sender, EventArgs e)
+        {
+            Detail = new DatePickerPage();
+        }
+
+        private void GoToTimePickerPage(object sender, EventArgs e)
+        {
+            Detail = new TimePickerPage();
+        }
     }
 }

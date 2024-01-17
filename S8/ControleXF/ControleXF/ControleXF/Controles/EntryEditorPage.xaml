@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControleXF.Controles.EntryEditorPage">
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="Fill"
+            VerticalOptions="Center" 
+            Padding="30" >
+            
+            <Entry 
+                x:Name="Entry_Principal"
+                Text=""
+                TextColor="Black"
+                Placeholder="Digite aqui um texto..."
+                PlaceholderColor="Gray"
+                Keyboard="Default"
+                IsPassword="False"
+                BackgroundColor="#CCCCCC"
+                />
+
+            <Label 
+                x:Name="Label_Informacao" />            
+
+            <Editor 
+                x:Name="Editor_Comentario"
+                Text=""
+                TextColor="Black"
+                Placeholder="Digite aqui uma observação..."
+                PlaceholderColor="Gray"
+                Keyboard="Default"
+                BackgroundColor="White"
+                />
+
+            <Label 
+                x:Name="Label_Length" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

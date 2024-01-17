@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControleXF.Controles.DatePickerPage">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10"
+            VerticalOptions="CenterAndExpand" >
+            <DatePicker 
+                TextColor="Black"
+                Format="dd/MM/yyyy"
+                MinimumDate="2004-05-23"
+                MaximumDate="2024-12-31"
+                Date="2023-06-03"
+                DateSelected="DatePicker_DateSelected" />
+
+            <Label 
+                x:Name="Label_Resultado" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout"
+             x:Class="ControleXF.Controles.SliderStepperPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Slider 
+                x:Name="Slider_Idade"
+                Minimum="0"
+                Maximum="120"
+                Value="18"
+                ValueChanged="Slider_Idade_ValueChanged" />
+
+            <Label 
+                Text="Resultado Slider"
+                x:Name="Label_ResultadoSlider" />
+
+            <Stepper 
+                x:Name="Stepper_QuantidadeFilhos"
+                Minimum="0"
+                Maximum="10"
+                Increment="1"
+                Value="0"
+                ValueChanged="Stepper_QuantidadeFilhos_ValueChanged" />
+
+            <Label 
+                x:Name="Label_ResultadoStepper"
+                Text="Resultado Stepper"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

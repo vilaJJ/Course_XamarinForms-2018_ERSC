@@ -53,5 +53,25 @@ namespace ControleXF.Menu
         {
             Detail = new TimePickerPage();
         }
+
+        private void GoToPickerPage(object sender, EventArgs e)
+        {
+            Detail = new PickerPage();
+        }
+
+        private void GoToSearchBarPage(object sender, EventArgs e)
+        {
+            Detail = new SearchBarPage();
+        }
+
+        private void GoToSliderStepperPage(object sender, EventArgs e)
+        {
+            Detail = new SliderStepperPage();
+        }
+
+        private void GoToSwitchPage(object sender, EventArgs e)
+        {
+            Detail = new SwitchPage();
+        }
     }
 }

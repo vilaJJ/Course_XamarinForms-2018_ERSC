@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout"
+             x:Class="ControleXF.Controles.SwitchPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Switch
+                x:Name="Switch_Lampada"
+                IsToggled="False" 
+                Toggled="Switch_Lampada_Toggled"/>
+
+            <Label 
+                x:Name="Label_Lampada" 
+                Text="Estado da Lâmpada" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

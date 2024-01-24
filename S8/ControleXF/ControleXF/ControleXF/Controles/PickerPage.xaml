@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout"
+             x:Class="ControleXF.Controles.PickerPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker
+                x:Name="Picker_MarcasSmartphones"
+                Title="Marcas de Smartphones" 
+                TextColor="DarkCyan" 
+                SelectedIndex="3" 
+                SelectedIndexChanged="Picker_MarcasSmartphones_SelectedIndexChanged" >
+                <Picker.Items>
+                    <x:String>Samsung</x:String>
+                    <x:String>Apple</x:String>
+                    <x:String>Xiaomi</x:String>
+                    <x:String>Motorola</x:String>
+                    <x:String>Lenovo</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label 
+                x:Name="Label_Resultado"
+                Text="Marca Selecionada"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

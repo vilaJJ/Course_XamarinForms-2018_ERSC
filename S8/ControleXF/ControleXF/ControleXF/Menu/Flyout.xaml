@@ -10,15 +10,15 @@
 
             <StackLayout>
                 <Button 
-                    Text="Activity Indicator"
+                    Text="ActivityIndicator"
                     Clicked="GoToActivityIndicatorPage" />
 
                 <Button 
-                    Text="Progress Bar"
+                    Text="ProgressBar"
                     Clicked="GoToProgressBarPage" />
                 
                 <Button 
-                    Text="Box View"
+                    Text="BoxView"
                     Clicked="GoToBoxViewPage" />
 
                 <Button 
@@ -40,6 +40,22 @@
                 <Button 
                     Text="TimePicker"
                     Clicked="GoToTimePickerPage" />
+
+                <Button 
+                    Text="Picker"
+                    Clicked="GoToPickerPage" />
+
+                <Button 
+                    Text="SeachBar"
+                    Clicked="GoToSearchBarPage" />
+
+                <Button 
+                    Text="Slider/Stepper"
+                    Clicked="GoToSliderStepperPage" />
+
+                <Button 
+                    Text="Switch" 
+                    Clicked="GoToSwitchPage" />
             </StackLayout>
         </ContentPage>
     </FlyoutPage.Flyout>

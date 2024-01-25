@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout"
+             x:Class="ControleXF.Controles.ImagePage">
+    <ContentPage.Content>
+        <ScrollView
+            x:Name="ScrollView_Imagens">
+            <StackLayout
+                x:Name="StackLayout_Imagens" >
+
+                <Image 
+                    x:Name="Image_Late"
+                    Source="https://m.media-amazon.com/images/I/81X+h7CMPgL._AC_UF1000,1000_QL80_.jpg"
+                    Aspect="AspectFit"
+                    IsOpaque="False" 
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

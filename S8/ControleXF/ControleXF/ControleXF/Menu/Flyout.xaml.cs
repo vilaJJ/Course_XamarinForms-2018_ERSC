@@ -73,5 +73,10 @@ namespace ControleXF.Menu
         {
             Detail = new SwitchPage();
         }
+
+        private void GoToImagePage(object sender, EventArgs e)
+        {
+            Detail = new ImagePage();
+        }
     }
 }

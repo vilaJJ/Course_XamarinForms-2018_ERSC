@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout"
+             x:Class="ControleXF.Controles.TableViewPage" 
+             Title="TableView" >
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10">
+            <TableView
+                Intent="Settings" >
+
+                <TableRoot>
+                    <TableSection
+                        Title="Backup">
+
+                        <SwitchCell 
+                            Text="Imagens"
+                            On="False" />
+
+                        <SwitchCell 
+                            Text="Textos" 
+                            On="False" />
+
+                        <SwitchCell 
+                            Text="Vídeos" 
+                            On="False" />
+
+                        <ViewCell>
+                            <StackLayout
+                                Orientation="Horizontal" >
+                                
+                                <Label 
+                                    VerticalOptions="Center"
+                                    Text="Frequência semanal" />
+
+                                <Slider                                     
+                                    MinimumTrackColor="Green"
+                                    MaximumTrackColor="Red"
+                                    ThumbColor="Black"
+                                    HorizontalOptions="FillAndExpand"
+                                    Minimum="0"
+                                    Maximum="7" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+
+                    <TableSection
+                        Title="Seguranca">
+
+                        <SwitchCell 
+                            Text="Criptografar senhas" 
+                            On="True" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

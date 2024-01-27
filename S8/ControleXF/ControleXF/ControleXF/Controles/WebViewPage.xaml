@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout"
+             x:Class="ControleXF.Controles.WebViewPage" 
+             Title="WebView" >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Orientation="Horizontal" >
+                
+                <Entry 
+                    x:Name="Entry_EnderecoSite" 
+                    HorizontalOptions="FillAndExpand"
+                    Completed="Entry_EnderecoSite_Completed" />
+                
+                <Button 
+                    x:Name="Button_Navegar"
+                    Text="Navegar"
+                    Clicked="Button_Navegar_Clicked" />
+                
+                          
+            </StackLayout>
+
+            <StackLayout
+                Margin="5"
+                Orientation="Horizontal" >
+                
+                <Button 
+                    x:Name="Button_Voltar"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="False"
+                    Clicked="Button_Voltar_Clicked" />
+
+                <Button 
+                    x:Name="Button_Proximo"
+                    HorizontalOptions="FillAndExpand"
+                    IsEnabled="False"
+                    Clicked="Button_Proximo_Clicked" />
+            </StackLayout>
+            
+            <WebView
+                x:Name="WebView_Browser"
+                Source="https://www.google.com.br"
+                Navigating="WebView_Browser_Navigating"
+                Navigated="WebView_Browser_Navigated"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" >
+                
+            </WebView>
+
+            <Label 
+                x:Name="Label_Status" 
+                LineBreakMode="MiddleTruncation"
+                Text="Status do WebView" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -14,74 +14,90 @@ namespace ControleXF.Menu
             InitializeComponent();
         }
 
+        private void Navegar(ContentPage pagina)
+        {
+            Detail = new NavigationPage(pagina);
+            IsPresented = false;
+        }
+
         private void GoToActivityIndicatorPage(object sender, EventArgs e)
         {
-            Detail = new ActivityIndicatorPage();
+            Navegar(new ActivityIndicatorPage());
         }
 
         private void GoToProgressBarPage(object sender, EventArgs e)
         {
-            Detail = new ProgressBarPage();
+            Navegar(new ProgressBarPage());
         }
 
         private void GoToBoxViewPage(object sender, EventArgs e)
         {
-            Detail = new BoxViewPage();
+            Navegar(new BoxViewPage());
         }
 
         private void GoToLabelPage(object sender, EventArgs e)
         {
-            Detail = new LabelPage();
+            Navegar(new LabelPage());
         }
 
         private void GoToButtonPage(object sender, EventArgs e)
         {
-            Detail = new ButtonPage();
+            Navegar(new ButtonPage());
         }
 
         private void GoToEntryEditorPage(object sender, EventArgs e)
         {
-            Detail = new EntryEditorPage();
+            Navegar(new EntryEditorPage());
         }
 
         private void GoToDatePickerPage(object sender, EventArgs e)
         {
-            Detail = new DatePickerPage();
+            Navegar(new DatePickerPage());
         }
 
         private void GoToTimePickerPage(object sender, EventArgs e)
         {
-            Detail = new TimePickerPage();
+            Navegar(new TimePickerPage());
         }
 
         private void GoToPickerPage(object sender, EventArgs e)
         {
-            Detail = new PickerPage();
+            Navegar(new PickerPage());
         }
 
         private void GoToSearchBarPage(object sender, EventArgs e)
         {
-            Detail = new SearchBarPage();
+            Navegar(new SearchBarPage());
         }
 
         private void GoToSliderStepperPage(object sender, EventArgs e)
         {
-            Detail = new SliderStepperPage();
+            Navegar(new SliderStepperPage());
         }
 
         private void GoToSwitchPage(object sender, EventArgs e)
         {
-            Detail = new SwitchPage();
+            Navegar(new SwitchPage());
         }
 
         private void GoToImagePage(object sender, EventArgs e)
         {
-            Detail = new ImagePage();
+            Navegar(new ImagePage());
         }
         
         private void GoToListViewPage(object sender, EventArgs e)
         {
-            Detail = new ListViewPage();
+            Navegar(new ListViewPage());
+        }
+
+        private void GoToTableViewPage(object sender, EventArgs e)
+        {
+            Navegar(new TableViewPage());
+        }
+
+        private void GoToWebViewPage(object sender, EventArgs e)
+        {
+            Navegar(new WebViewPage());
         }
     }
 }

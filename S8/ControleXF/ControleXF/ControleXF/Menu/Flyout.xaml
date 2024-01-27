@@ -3,7 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="ControleXF.Menu.Flyout"
-    xmlns:page="clr-namespace:ControleXF" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout">
+    xmlns:page="clr-namespace:ControleXF" xmlns:menu="clr-namespace:ControleXF.Menu" x:DataType="menu:Flyout" >
+    
     <FlyoutPage.Flyout>
         <ContentPage
             Title="Menu">
@@ -65,12 +66,24 @@
                     <Button 
                         Text="ListView"
                         Clicked="GoToListViewPage" />
+
+                    <Button 
+                        Text="TableView" 
+                        Clicked="GoToTableViewPage" />
+
+                    <Button 
+                        Text="WebView" 
+                        Clicked="GoToWebViewPage" />
                 </StackLayout>
             </ScrollView>
         </ContentPage>
     </FlyoutPage.Flyout>
 
     <FlyoutPage.Detail>
-        <page:MainPage />
+        <NavigationPage>
+            <x:Arguments>
+                <page:MainPage />
+            </x:Arguments>
+        </NavigationPage>        
     </FlyoutPage.Detail>
 </FlyoutPage>

@@ -78,5 +78,10 @@ namespace ControleXF.Menu
         {
             Detail = new ImagePage();
         }
+        
+        private void GoToListViewPage(object sender, EventArgs e)
+        {
+            Detail = new ListViewPage();
+        }
     }
 }

@@ -8,59 +8,65 @@
         <ContentPage
             Title="Menu">
 
-            <StackLayout>
-                <Button 
-                    Text="ActivityIndicator"
-                    Clicked="GoToActivityIndicatorPage" />
+            <ScrollView>
+                <StackLayout>
+                    <Button 
+                        Text="ActivityIndicator"
+                        Clicked="GoToActivityIndicatorPage" />
 
-                <Button 
-                    Text="ProgressBar"
-                    Clicked="GoToProgressBarPage" />
-                
-                <Button 
-                    Text="BoxView"
-                    Clicked="GoToBoxViewPage" />
+                    <Button 
+                        Text="ProgressBar"
+                        Clicked="GoToProgressBarPage" />
 
-                <Button 
-                    Text="Label"
-                    Clicked="GoToLabelPage" />
+                    <Button 
+                        Text="BoxView"
+                        Clicked="GoToBoxViewPage" />
 
-                <Button 
-                    Text="Button"
-                    Clicked="GoToButtonPage" />
+                    <Button 
+                        Text="Label"
+                        Clicked="GoToLabelPage" />
 
-                <Button 
-                    Text="Entry/Editor"
-                    Clicked="GoToEntryEditorPage" />
+                    <Button 
+                        Text="Button"
+                        Clicked="GoToButtonPage" />
 
-                <Button 
-                    Text="DatePicker"
-                    Clicked="GoToDatePickerPage" />
+                    <Button 
+                        Text="Entry/Editor"
+                        Clicked="GoToEntryEditorPage" />
 
-                <Button 
-                    Text="TimePicker"
-                    Clicked="GoToTimePickerPage" />
+                    <Button 
+                        Text="DatePicker"
+                        Clicked="GoToDatePickerPage" />
 
-                <Button 
-                    Text="Picker"
-                    Clicked="GoToPickerPage" />
+                    <Button 
+                        Text="TimePicker"
+                        Clicked="GoToTimePickerPage" />
 
-                <Button 
-                    Text="SeachBar"
-                    Clicked="GoToSearchBarPage" />
+                    <Button 
+                        Text="Picker"
+                        Clicked="GoToPickerPage" />
 
-                <Button 
-                    Text="Slider/Stepper"
-                    Clicked="GoToSliderStepperPage" />
+                    <Button 
+                        Text="SeachBar"
+                        Clicked="GoToSearchBarPage" />
 
-                <Button 
-                    Text="Switch" 
-                    Clicked="GoToSwitchPage" />
+                    <Button 
+                        Text="Slider/Stepper"
+                        Clicked="GoToSliderStepperPage" />
 
-                <Button 
-                    Text="Image"
-                    Clicked="GoToImagePage" />
-            </StackLayout>
+                    <Button 
+                        Text="Switch" 
+                        Clicked="GoToSwitchPage" />
+
+                    <Button 
+                        Text="Image"
+                        Clicked="GoToImagePage" />
+
+                    <Button 
+                        Text="ListView"
+                        Clicked="GoToListViewPage" />
+                </StackLayout>
+            </ScrollView>
         </ContentPage>
     </FlyoutPage.Flyout>
 

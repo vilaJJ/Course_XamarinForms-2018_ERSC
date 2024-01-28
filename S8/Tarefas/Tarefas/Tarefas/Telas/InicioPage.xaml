@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:componentes="clr-namespace:Tarefas.Componentes"
+             x:Class="Tarefas.Telas.InicioPage"
+             Title="Tarefas Diárias">
+    <ContentPage.Content>
+        <StackLayout>
+            <componentes:CabecalhoPaginasView />
+
+            <ScrollView
+                Orientation="Vertical"
+                VerticalOptions="FillAndExpand" >
+
+                <StackLayout
+                    x:Name="StackLayout_Tarefas"
+                    Padding="10" 
+                    Spacing="10" >
+
+                    <StackLayout
+                        Spacing="15"
+                        Orientation="Horizontal" >
+
+                        <Image 
+                            VerticalOptions="Center" >
+                            
+                            <Image.Source>
+                                <OnPlatform
+                                    x:TypeArguments="ImageSource" >
+
+                                    <On Platform="Android" Value="check_off.png" />
+                                    <On Platform="iOS" Value="Images/check_off.png" />
+                                </OnPlatform>
+                            </Image.Source>
+                        </Image>
+
+                        <Label
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand"
+                            Text="Tarefa 1"
+                            TextColor="Black" />
+
+                        <Image
+                            VerticalOptions="Center" >
+                            
+                            <Image.Source>
+                                <OnPlatform
+                                    x:TypeArguments="ImageSource" >
+
+                                    <On Platform="Android" Value="red_dot.png" />
+                                    <On Platform="iOS" Value="Images/red_dot.png" />
+                                </OnPlatform>
+                            </Image.Source>
+                        </Image>
+
+
+                        <Image
+                            VerticalOptions="Center">
+
+                            <Image.Source>
+                                <OnPlatform
+                                    x:TypeArguments="ImageSource" >
+
+                                    <On Platform="Android" Value="delete.png" />
+                                    <On Platform="iOS" Value="Images/delete.png" />
+                                </OnPlatform>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+
+                    <StackLayout
+                        Spacing="15"
+                        Orientation="Horizontal" >
+
+                        <Image
+                            VerticalOptions="Center" >
+
+                            <Image.Source>
+                                <OnPlatform
+                                    x:TypeArguments="ImageSource" >
+
+                                    <On Platform="Android" Value="check_on.png" />
+                                    <On Platform="iOS" Value="Images/check_on.png" />
+                                </OnPlatform>
+                            </Image.Source>
+                        </Image>
+
+                        <StackLayout
+                            VerticalOptions="Center"
+                            HorizontalOptions="FillAndExpand"
+                            Spacing="0" >
+
+                            <Label 
+                                Text="Tarefa 2"
+                                TextColor="Gray" />
+
+                            <Label 
+                                Text="Finalizado em 06/03/2023 - 21h19" 
+                                TextColor="Gray" 
+                                FontSize="12" />
+                        </StackLayout>
+
+                        <Image
+                            VerticalOptions="Center" >
+
+                            <Image.Source>
+                                <OnPlatform
+                                    x:TypeArguments="ImageSource" >
+
+                                    <On Platform="Android" Value="orange_dot.png" />
+                                    <On Platform="iOS" Value="Images/orange_dot.png" />
+                                </OnPlatform>
+                            </Image.Source>
+                        </Image>
+
+                        <Image
+                            VerticalOptions="Center" >
+
+                            <Image.Source>
+                                <OnPlatform
+                                    x:TypeArguments="ImageSource" >
+
+                                    <On Platform="Android" Value="delete.png" />
+                                    <On Platform="iOS" Value="Images/delete.png" />
+                                </OnPlatform>
+                            </Image.Source>
+                        </Image>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            
+            <Button
+                x:Name="Button_AdicionarTarefa"
+                Clicked="Button_AdicionarTarefa_Clicked"
+                Text="+"
+                HorizontalOptions="Center"
+                FontSize="36"
+                Margin="30"
+                TextColor="White"
+                BackgroundColor="#FF1414FF"
+                CornerRadius="36" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:componentes="clr-namespace:Tarefas.Componentes" x:DataType="componentes:CabecalhoPaginasView"
+             x:Class="Tarefas.Componentes.CabecalhoPaginasView">
+  <ContentView.Content>
+        <StackLayout
+            BackgroundColor="#FF1414FF" 
+            HeightRequest="200" >
+            
+            <Label 
+                Text="Meu Dia!"
+                TextColor="White"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand" />
+
+            <Label 
+                Text="Sábado, 03/06/2023"
+                TextColor="White"
+                Padding="10"
+                FontSize="16"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                VerticalOptions="End" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

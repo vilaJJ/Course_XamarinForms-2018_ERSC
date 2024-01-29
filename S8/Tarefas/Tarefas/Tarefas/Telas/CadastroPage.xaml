@@ -25,6 +25,7 @@
                     Spacing="25" Padding="0,15">
 
                     <StackLayout
+                        x:Name="StackLayout_Prioridades_Vermelha"
                         Orientation="Horizontal"
                         Spacing="10" >
 
@@ -41,10 +42,17 @@
 
                         <Label 
                             Text="Urgente e importante"
+                            TextColor="Black"
                             HorizontalOptions="FillAndExpand" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Tapped="TapGestureRecognizer_Tapped" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
 
                     <StackLayout
+                        x:Name="StackLayout_Prioridades_Laranja"
                         Orientation="Horizontal"
                         Spacing="10" >
 
@@ -61,10 +69,17 @@
 
                         <Label 
                             Text="Urgente e não importante"
+                            TextColor="LightGray"
                             HorizontalOptions="FillAndExpand" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Tapped="TapGestureRecognizer_Tapped" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
 
                     <StackLayout
+                        x:Name="StackLayout_Prioridades_Amarela"
                         Orientation="Horizontal"
                         Spacing="10" >
 
@@ -81,10 +96,17 @@
 
                         <Label 
                             Text="Não urgente e importante"
+                            TextColor="LightGray"
                             HorizontalOptions="FillAndExpand" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Tapped="TapGestureRecognizer_Tapped" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
 
                     <StackLayout
+                        x:Name="StackLayout_Prioridades_Verde"
                         Orientation="Horizontal"
                         Spacing="10" >
 
@@ -101,7 +123,13 @@
 
                         <Label 
                             Text="Não urgente e não importante"
+                            TextColor="LightGray"
                             HorizontalOptions="FillAndExpand" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Tapped="TapGestureRecognizer_Tapped" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </StackLayout>
 

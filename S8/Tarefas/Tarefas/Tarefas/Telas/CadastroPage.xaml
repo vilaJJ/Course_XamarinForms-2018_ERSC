@@ -135,6 +135,7 @@
 
                 <Button 
                     x:Name="Button_AdicionarTarefa"
+                    Clicked="Button_AdicionarTarefa_Clicked"
                     Text="Adicionar"
                     TextColor="White"
                     BackgroundColor="#FF1414FF"

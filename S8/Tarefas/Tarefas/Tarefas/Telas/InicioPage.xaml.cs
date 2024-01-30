@@ -12,6 +12,13 @@ namespace Tarefas.Telas
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Implementar lógica de recarregamento dos dados
+        }
+
         private void Button_AdicionarTarefa_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CadastroPage());

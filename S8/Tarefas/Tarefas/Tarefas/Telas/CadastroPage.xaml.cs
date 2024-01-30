@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Tarefas.Data;
+using Tarefas.Modelos;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +18,7 @@ namespace Tarefas.Telas
         {
             InitializeComponent();
 
-            Prioridade = 4; 
+            Prioridade = 4;
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -23,7 +27,7 @@ namespace Tarefas.Telas
             var stacksLayout = StackLayout_Prioridades.Children;
 
             foreach (var stackLayout in stacksLayout.Cast<StackLayout>())
-            {                
+            {
                 var labelPrioridade = stackLayout.Children[1] as Label;
 
                 if (stackLayoutClicado.Equals(stackLayout))
@@ -34,7 +38,7 @@ namespace Tarefas.Telas
                     labelPrioridade.TextColor = Color.Black;
                     continue;
                 }
-                
+
                 labelPrioridade.TextColor = Color.LightGray;
             }
         }
@@ -64,6 +68,30 @@ namespace Tarefas.Telas
             {
                 throw new InvalidOperationException("Prioridade desconhecida.");
             }
+        }
+
+        private void Button_AdicionarTarefa_Clicked(object sender, EventArgs e)
+        {
+            var nomeTarefa = Entry_NomeTarefa.Text?.Trim();
+            var prioridade = Prioridade;
+
+            if (string.IsNullOrEmpty(nomeTarefa) is true)
+            {
+                DisplayAlert(
+                    "Erro ao adicionar tarefa",
+                    "É necessário preencher o campo de Nome",
+                    "Ok"
+                    );
+
+                return;
+            }
+
+            var tarefa = new Tarefa(nomeTarefa, prioridade);
+
+            tarefa.Salvar();
+
+            DisplayAlert("Tarefa salva.", "Tarefa salva com sucesso.", "Ok");
+            Navigation.PopAsync();
         }
     }
 }

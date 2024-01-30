@@ -7,6 +7,14 @@ namespace Tarefas.Modelos
         public bool Finalizada { get; set; }
         public string Nome { get; set; }
         public byte Prioridade { get; set; }
-        public DateTime DataFinalizacao { get; set; }
+        public DateTime? DataFinalizacao { get; set; }
+
+        public Tarefa(string nome, byte prioridade)
+        {
+            Finalizada = false;
+            Nome = nome;
+            Prioridade = prioridade;
+            DataFinalizacao = null;
+        }
     }
 }

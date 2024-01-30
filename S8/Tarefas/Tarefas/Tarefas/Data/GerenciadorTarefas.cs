@@ -9,6 +9,11 @@ namespace Tarefas.Data
     {
         private const string ListaTarefasKey = "ListaTarefas";
         private static List<Tarefa> _lista;
+        
+        static GerenciadorTarefas()
+        {
+            _lista = new List<Tarefa>();
+        }
 
         public static void Salvar(this Tarefa tarefa)
         {

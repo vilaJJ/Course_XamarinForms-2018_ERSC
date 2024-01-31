@@ -16,6 +16,7 @@
                 VerticalOptions="CenterAndExpand" />
 
             <Label 
+                x:Name="Label_DataAtual"
                 Text="Sábado, 03/06/2023"
                 TextColor="White"
                 Padding="10"

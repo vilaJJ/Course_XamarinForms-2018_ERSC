@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Tarefas.Componentes
@@ -9,6 +10,17 @@ namespace Tarefas.Componentes
         public CabecalhoPaginasView()
         {
             InitializeComponent();
+
+            DefinirDataAtual();
+        }
+
+        private void DefinirDataAtual()
+        {
+            var dataAtual = DateTime.Now;
+
+            var texto = dataAtual.ToString("dddd, dd/MM/yyyy").Normalize();
+
+            Label_DataAtual.Text = texto;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using Tarefas.Modelos;
 using Xamarin.Forms;
@@ -44,7 +45,8 @@ namespace Tarefas.Data
         {
             if (Application.Current.Properties.ContainsKey(ListaTarefasKey))
             {
-                _lista = Application.Current.Properties[ListaTarefasKey] as List<Tarefa>;
+                var listaJson = Application.Current.Properties[ListaTarefasKey] as string;
+                _lista = JsonConvert.DeserializeObject<List<Tarefa>>(listaJson);
             }
             else
             {
@@ -61,7 +63,9 @@ namespace Tarefas.Data
                 Application.Current.Properties.Remove(ListaTarefasKey);
             }
 
-            Application.Current.Properties.Add(ListaTarefasKey, _lista);
+            var listaJson = JsonConvert.SerializeObject(_lista);
+
+            Application.Current.Properties.Add(ListaTarefasKey, listaJson);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Tarefas.Data;
 using Tarefas.Modelos;
 using Xamarin.Forms;
@@ -49,11 +50,11 @@ namespace Tarefas.Telas
 
         private StackLayout ObterTarefaAberta(Tarefa tarefa)
         {
-            var imagemCheck = ObterImagemCheck(tarefa.Finalizada);
+            var imagemCheck = ObterImagemCheck(tarefa);
 
             var imagemPrioridade = ObterImagemPrioridade(tarefa.ObterNomeImagemPrioridade());
 
-            var imagemExcluir = ObterImagemExcluir(tarefa.ObterNomeImagemExcluir());
+            var imagemExcluir = ObterImagemExcluir(tarefa);
 
             var labelTitulo = new Label()
             {
@@ -79,7 +80,7 @@ namespace Tarefas.Telas
 
         private StackLayout ObterTarefaFechada(Tarefa tarefa)
         {
-            var imagemCheck = ObterImagemCheck(tarefa.Finalizada);
+            var imagemCheck = ObterImagemCheck(tarefa);
 
             var stackLayoutTitulo = new StackLayout()
             {
@@ -90,7 +91,7 @@ namespace Tarefas.Telas
 
             var imagemPrioridade = ObterImagemPrioridade(tarefa.ObterNomeImagemPrioridade());
 
-            var imagemExcluir = ObterImagemExcluir(tarefa.ObterNomeImagemExcluir());
+            var imagemExcluir = ObterImagemExcluir(tarefa);
 
             var labelTitulo = new Label()
             {
@@ -122,11 +123,11 @@ namespace Tarefas.Telas
             return stackLayout;
         }
 
-        private Image ObterImagemCheck(bool finalizado)
+        private Image ObterImagemCheck(Tarefa tarefa)
         {
             ImageSource source;
 
-            if (finalizado)
+            if (tarefa.Finalizada)
             {
                 source = ImageSource.FromFile(
                     Device.RuntimePlatform is "iOS"
@@ -150,6 +151,41 @@ namespace Tarefas.Telas
                 Source = source
             };
 
+            var deleteGesture = new TapGestureRecognizer();
+
+            deleteGesture.Tapped += delegate
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var atualizarLista = true;
+
+                    if (tarefa.Finalizada)
+                    {
+                        var reabrirTarefa = await DisplayAlert("Reabrir tarefa", "Deseja realmente reabrir a tarefa?", "Sim", "Não");
+
+                        if (reabrirTarefa is true)
+                        {
+                            tarefa.Reabrir();
+                        }
+                        else
+                        {
+                            atualizarLista = false;
+                        }
+                    }
+                    else
+                    {
+                        tarefa.Finalizar();
+                    }
+
+                    if (atualizarLista is true)
+                    {
+                        AtualizarListaTarefas();
+                    }                    
+                });
+            };
+
+            imagemCheck.GestureRecognizers.Add(deleteGesture);
+
             return imagemCheck;
         }
 
@@ -164,13 +200,32 @@ namespace Tarefas.Telas
             return imagemPrioridade;
         }
 
-        private Image ObterImagemExcluir(string nomeImagemExcluir)
+        private Image ObterImagemExcluir(Tarefa tarefa)
         {
             var imagemExcluir = new Image()
             {
                 VerticalOptions = LayoutOptions.Center,
-                Source = ImageSource.FromFile(nomeImagemExcluir)
+                Source = ImageSource.FromFile(tarefa.ObterNomeImagemExcluir())
             };
+
+            var deleteGesture = new TapGestureRecognizer();
+
+            deleteGesture.Tapped += delegate 
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var apagarTarefa = await DisplayAlert("Apagar tarefa", "Deseja realmente apagar a tarefa?", "Sim", "Não");
+
+                    if (apagarTarefa is true)
+                    {
+                        tarefa.Apagar();
+                        AtualizarListaTarefas();
+                    }
+
+                });                              
+            };
+
+            imagemExcluir.GestureRecognizers.Add(deleteGesture);
 
             return imagemExcluir;
         }

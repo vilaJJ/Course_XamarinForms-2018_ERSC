@@ -30,15 +30,12 @@ namespace Tarefas.Data
 
         public static void Finalizar(this Tarefa tarefa)
         {
-            var indice = _lista.IndexOf(tarefa);
+            OperacaoFinalizacao(tarefa, true);
+        }
 
-            tarefa.Finalizada = true;
-            tarefa.DataFinalizacao = DateTime.Now;
-
-            _lista.RemoveAt(indice);
-            _lista.Insert(indice, tarefa);
-
-            AtualizarRegistroLocal();
+        public static void Reabrir(this Tarefa tarefa)
+        {
+            OperacaoFinalizacao(tarefa, false);
         }
 
         public static List<Tarefa> Obter()
@@ -66,6 +63,19 @@ namespace Tarefas.Data
             var listaJson = JsonConvert.SerializeObject(_lista);
 
             Application.Current.Properties.Add(ListaTarefasKey, listaJson);
+        }
+
+        private static void OperacaoFinalizacao(Tarefa tarefa, bool finalizar)
+        {
+            var indice = _lista.IndexOf(tarefa);
+
+            tarefa.Finalizada = finalizar;
+            tarefa.DataFinalizacao = DateTime.Now;
+
+            _lista.RemoveAt(indice);
+            _lista.Insert(indice, tarefa);
+
+            AtualizarRegistroLocal();
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Celulas.Menu.Menu">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:page="clr-namespace:Celulas.Paginas" xmlns:menu="clr-namespace:Celulas.Menu" 
+            x:DataType="menu:Menu"
+            x:Class="Celulas.Menu.Menu">
 
     <FlyoutPage.Flyout>
         <ContentPage
@@ -10,9 +12,9 @@
             <ScrollView>
                 <StackLayout>
                     <Button 
-                        x:Name="Button_1"
-                        Text="Página 1" 
-                        Clicked="Button_1_Clicked"/>
+                        x:Name="Button_TextCell"
+                        Text="TextCell" 
+                        Clicked="Button_TextCell_Clicked"/>
                 </StackLayout>
             </ScrollView>
         </ContentPage>
@@ -21,7 +23,7 @@
     <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                
+                <page:TextCellPage />
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>

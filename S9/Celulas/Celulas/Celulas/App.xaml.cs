@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace Celulas
 {
@@ -10,7 +8,7 @@ namespace Celulas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Menu.Menu();
         }
 
         protected override void OnStart()

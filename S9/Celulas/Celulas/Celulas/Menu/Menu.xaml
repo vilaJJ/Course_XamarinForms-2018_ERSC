@@ -10,11 +10,48 @@
             Title="Menu" >
 
             <ScrollView>
-                <StackLayout>
+                <StackLayout
+                    Padding="10" >
+                    <Label 
+                        Text="Componentes" />
+
+                    <Button 
+                        x:Name="Button_ListView" 
+                        Text="ListView"
+                        Clicked="Button_ListView_Clicked" />
+
+                    <Button 
+                        x:Name="Button_ListViewButton" 
+                        Text="ListViewButton"
+                        Clicked="Button_ListViewButton_Clicked" />
+
+                    <Label 
+                        Text="Células" />
+                    
                     <Button 
                         x:Name="Button_TextCell"
                         Text="TextCell" 
-                        Clicked="Button_TextCell_Clicked"/>
+                        Clicked="Button_TextCell_Clicked" />
+
+                    <Button 
+                        x:Name="Button_ImageCell"
+                        Text="ImageCell"
+                        Clicked="Button_ImageCell_Clicked" />
+
+                    <Button 
+                        x:Name="Button_EntryCell"
+                        Text="EntryCell"
+                        Clicked="Button_EntryCell_Clicked" />
+
+                    <Button 
+                        x:Name="Button_SwitchCell" 
+                        Text="SwitchCell"
+                        Clicked="Button_SwitchCell_Clicked" />
+
+                    <Button 
+                        x:Name="Button_ViewCell"
+                        Text="ViewCell"
+                        Clicked="Button_ViewCell_Clicked" />
                 </StackLayout>
             </ScrollView>
         </ContentPage>
@@ -23,7 +60,7 @@
     <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <page:TextCellPage />
+                <page:ListViewPage />
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>

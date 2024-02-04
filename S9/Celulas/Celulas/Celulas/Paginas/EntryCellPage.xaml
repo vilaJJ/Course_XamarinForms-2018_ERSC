@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Celulas.Paginas.EntryCellPage"
+             Title="EntryCell"
+             Padding="10" >
+    <ContentPage.Content>
+        <TableView>
+            <TableRoot>
+                <TableSection
+                    Title="Cadastro">
+
+                    <EntryCell 
+                        Label="Nome"
+                        Placeholder="Digite o nome..."
+                        Keyboard="Default" 
+                        LabelColor="Blue" />
+
+                    <EntryCell 
+                        Label="Cargo"
+                        Placeholder="Digite o cargo..."
+                        Keyboard="Default" 
+                        LabelColor="Blue" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

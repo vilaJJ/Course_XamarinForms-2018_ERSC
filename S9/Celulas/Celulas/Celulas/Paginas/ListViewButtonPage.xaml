@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Celulas.Paginas.ListViewButtonPage"
+             Title="ListViewButton"
+             Padding="10" >
+    <ContentPage.Content>
+        <ListView
+            x:Name="ListView_Funcionarios"
+            HasUnevenRows="True" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Orientation="Horizontal" >
+
+                            <StackLayout
+                                Orientation="Vertical"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalOptions="Center"
+                                Spacing="0" >
+                                
+                                <Label 
+                                    Text="{Binding Nome}"
+                                    TextColor="Blue" />
+
+                                <Label 
+                                    Text="{Binding Cargo}"
+                                    TextColor="CadetBlue" />
+                            </StackLayout>
+                            
+
+                            <Button
+                                x:Name="Button_Ferias"
+                                Padding="0"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                Text="Férias" 
+                                CommandParameter="{Binding .}"
+                                Clicked="Button_Ferias_Clicked" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

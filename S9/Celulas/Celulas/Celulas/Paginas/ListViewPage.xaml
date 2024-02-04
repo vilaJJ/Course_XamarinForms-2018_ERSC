@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Celulas.Paginas.ListViewPage"
+             Title="ListView" >
+    <ContentPage.Content>
+        <ListView
+            x:Name="ListView_Funcionarios" 
+            ItemSelected="ListView_Funcionarios_ItemSelected" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell 
+                        Text="{Binding Nome}"
+                        Detail="{Binding Cargo}"
+                        ImageSource="{Binding Foto}" 
+                        TextColor="Blue"
+                        DetailColor="CadetBlue">
+
+                        <ImageCell.ContextActions>
+                            <MenuItem 
+                                x:Name="MenuItem_Funcionario_Licenca"
+                                Text="Licença"
+                                CommandParameter="{Binding .}"
+                                Clicked="MenuItem_Funcionario_Licenca_Clicked" />
+
+                            <MenuItem 
+                                x:Name="MenuItem_Funcionario_Ferias"
+                                Text="Férias" 
+                                CommandParameter="{Binding .}"
+                                Clicked="MenuItem_Funcionario_Ferias_Clicked" />
+                        </ImageCell.ContextActions>
+                    </ImageCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

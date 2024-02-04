@@ -133,4 +133,7 @@
       <Name>Celulas</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jihyo.png" />
+  </ItemGroup>
 </Project>

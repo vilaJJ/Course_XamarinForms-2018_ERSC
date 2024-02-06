@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Estilos.Pagina.ExplicitStylePage">
+
+    <ContentPage.Resources>
+        <Style
+            TargetType="Label">
+
+            <Setter 
+                Property="TextColor"
+                Value="Blue"/>
+
+            <Setter 
+                Property="HorizontalOptions"
+                Value="StartAndExpand" />
+
+            <Setter 
+                Property="VerticalOptions"
+                Value="CenterAndExpand" />
+        </Style>
+
+        <Style
+            x:Key="Label_Style"
+            TargetType="Label">
+
+            <Setter 
+                Property="TextColor"
+                Value="Purple"/>
+
+            <Setter 
+                Property="HorizontalOptions"
+                Value="EndAndExpand" />
+
+            <Setter 
+                Property="VerticalOptions"
+                Value="CenterAndExpand" />
+        </Style>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+                Style="{StaticResource Label_Style}"
+                Text="Juan Felipe Alves Flores" />
+
+            <Label 
+                Text="Bárbara Ohana Santos Silva" />
+
+            <Label 
+                Style="{StaticResource Label_Style}"
+                Text="Maria Eduarda Batista Sousa" />
+
+            <Label 
+                Text="Sara Ghabrielly Oliveira Silva" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

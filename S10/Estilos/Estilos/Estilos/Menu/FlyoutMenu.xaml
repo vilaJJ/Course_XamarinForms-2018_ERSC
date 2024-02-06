@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:inicial="clr-namespace:Estilos"
+            x:Class="Estilos.Menu.FlyoutMenu">
+
+    <FlyoutPage.Flyout>
+        <ContentPage
+            Title="Menu">
+
+            <ScrollView
+                Orientation="Vertical">
+
+                <StackLayout
+                    Padding="10">
+                    
+                    <Button 
+                        x:Name="Button_ImplicitStyle"
+                        Text="Implicit Style"
+                        Clicked="Button_ImplicitStyle_Clicked" />
+
+                    <Button 
+                        x:Name="Button_ExplicitStyle"
+                        Text="Explicit Style"
+                        Clicked="Button_ExplicitStyle_Clicked" />
+
+                    <Button 
+                        x:Name="Button_GlobalStyle"
+                        Text="Global Style"
+                        Clicked="Button_GlobalStyle_Clicked" />
+                </StackLayout>
+            </ScrollView>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <inicial:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

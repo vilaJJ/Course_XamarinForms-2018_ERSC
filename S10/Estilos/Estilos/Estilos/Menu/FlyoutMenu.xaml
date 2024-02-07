@@ -28,6 +28,16 @@
                         x:Name="Button_GlobalStyle"
                         Text="Global Style"
                         Clicked="Button_GlobalStyle_Clicked" />
+
+                    <Button 
+                        x:Name="Button_InheritStyle"
+                        Text="Inherit Style"
+                        Clicked="Button_InheritStyle_Clicked" />
+
+                    <Button 
+                        x:Name="Button_DynamicStyle"
+                        Text="Dynamic Style"
+                        Clicked="Button_DynamicStyle_Clicked" />
                 </StackLayout>
             </ScrollView>
         </ContentPage>

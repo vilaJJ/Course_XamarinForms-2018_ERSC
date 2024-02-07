@@ -32,5 +32,15 @@ namespace Estilos.Menu
         {
             Navegar(new GlobalStylePage());
         }
+
+        private void Button_InheritStyle_Clicked(object sender, System.EventArgs e)
+        {
+            Navegar(new InheritStylePage());
+        }
+
+        private void Button_DynamicStyle_Clicked(object sender, System.EventArgs e)
+        {
+            Navegar(new DynamicStylePage());
+        }
     }
 }

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Estilos.Pagina.InheritStylePage"
+             Title="Inherit Style">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="Style_View"
+                TargetType="View">
+
+                <Setter 
+                    Property="HorizontalOptions"
+                    Value="CenterAndExpand" />
+                
+                <Setter 
+                    Property="VerticalOptions"
+                    Value="CenterAndExpand" />
+            </Style>
+
+            <Style
+                x:Key="Style_Button"
+                BasedOn="{StaticResource Style_View}"
+                TargetType="Button">
+
+                <Setter 
+                    Property="BackgroundColor"
+                    Value="CadetBlue" />
+
+                <Setter 
+                    Property="TextColor"
+                    Value="White" />
+
+                <Setter 
+                    Property="FontAttributes"
+                    Value="Bold" />
+            </Style>
+
+            <Style
+                x:Key="Style_Label"
+                BasedOn="{StaticResource Style_View}"
+                TargetType="Label">
+
+                <Setter 
+                    Property="TextColor"
+                    Value="DarkBlue" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+                Style="{StaticResource Style_Label}"
+                Text="Está é a página 'Inherit Style'." />
+
+            <Button 
+                Style="{StaticResource Style_Button}"
+                Text="Botão" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

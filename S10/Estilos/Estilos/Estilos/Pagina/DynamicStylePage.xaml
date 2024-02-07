@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Estilos.Pagina.DynamicStylePage"
+             Title="Dynamic Style">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="Style_View"
+                TargetType="View">
+
+                <Setter 
+                    Property="HorizontalOptions"
+                    Value="CenterAndExpand" />
+
+                <Setter 
+                    Property="VerticalOptions"
+                    Value="CenterAndExpand" />
+            </Style>
+
+            <Style
+                TargetType="StackLayout">
+
+                <Setter 
+                    Property="Padding"
+                    Value="15, 100"/>
+            </Style>
+
+            <Style
+                BasedOn="{StaticResource Style_View}"
+                TargetType="Label">
+
+                <Setter 
+                    Property="FontSize"
+                    Value="Title" />
+            </Style>
+            
+            <Color x:Key="Label_TextColor">CadetBlue</Color>
+            <FontAttributes x:Key="Label_FontAttributes">Bold, Italic</FontAttributes>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label 
+                Text="Welcome to Xamarin.Forms!"
+                TextColor="{StaticResource Label_TextColor}"
+                FontAttributes="{StaticResource Label_FontAttributes}" />
+
+            <Label 
+                Text="Bem-vindo ao Xamarin.Forms!"
+                TextColor="{DynamicResource Label_TextColor}"
+                FontAttributes="{DynamicResource Label_FontAttributes}" />
+
+            <Button 
+                x:Name="Button_Alterar"
+                Text="Alterar"
+                Clicked="Button_Alterar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

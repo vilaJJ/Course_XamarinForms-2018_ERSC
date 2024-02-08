@@ -1,0 +1,7 @@
+Cor de fundo: #6A34B0
+
+Cor Clara: #947AC4
+
+Cor Branca: #FFFFFF
+
+Fonte: Segoe UI

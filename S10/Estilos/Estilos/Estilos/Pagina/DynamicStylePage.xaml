@@ -28,6 +28,7 @@
             </Style>
 
             <Style
+                x:Key="Style_LabelTitle"
                 BasedOn="{StaticResource Style_View}"
                 TargetType="Label">
 
@@ -35,7 +36,17 @@
                     Property="FontSize"
                     Value="Title" />
             </Style>
-            
+
+            <Style
+                x:Key="Style_LabelCaption"
+                BasedOn="{StaticResource Style_View}"
+                TargetType="Label">
+
+                <Setter 
+                    Property="FontSize"
+                    Value="Caption" />
+            </Style>
+
             <Color x:Key="Label_TextColor">CadetBlue</Color>
             <FontAttributes x:Key="Label_FontAttributes">Bold, Italic</FontAttributes>
             
@@ -53,6 +64,14 @@
                 Text="Bem-vindo ao Xamarin.Forms!"
                 TextColor="{DynamicResource Label_TextColor}"
                 FontAttributes="{DynamicResource Label_FontAttributes}" />
+
+            <Label 
+                Style="{StaticResource Style_LabelTitle}"
+                Text="Label estática" />
+
+            <Label 
+                Style="{DynamicResource Style_LabelTitle}"
+                Text="Label dinâmica"/>
 
             <Button 
                 x:Name="Button_Alterar"

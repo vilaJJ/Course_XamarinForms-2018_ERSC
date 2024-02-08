@@ -21,6 +21,7 @@ namespace Estilos.Pagina
 			{
                 Resources["Label_TextColor"] = Color.DarkBlue;
                 Resources["Label_FontAttributes"] = FontAttributes.Bold;
+                Resources["Style_LabelTitle"] = Resources["Style_LabelCaption"];
             }
 			else
 			{

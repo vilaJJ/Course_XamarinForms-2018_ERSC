@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cinemix.MainPage"
-             Title="Cinemix">
+             Title="Cinemix"
+             BackgroundColor="#6A34B0">
 
     <ContentPage.Content>
         <StackLayout>
@@ -17,6 +18,49 @@
                     Style="{StaticResource Style_SubtituloApp}"
                     Text="seu app de cinema" />
             </StackLayout>
+
+            <ScrollView
+                Orientation="Vertical">
+
+                <StackLayout
+                    Style="{StaticResource Style_StackLayoutContent}">
+
+                    <Label 
+                        Style="{StaticResource Style_Lancamento}"
+                        Text="Lançamento" />
+
+                    <Label 
+                        Style="{StaticResource Style_TituloFilme}"
+                        Text="Pantera Negra" />
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Source="Fundo.png"
+                            Aspect="AspectFit" 
+                            HorizontalOptions="Center" />
+
+                        <Image 
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Source="Poster.png"
+                            Margin="0, 15"
+                            Aspect="AspectFit"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start" />
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

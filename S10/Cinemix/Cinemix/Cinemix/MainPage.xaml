@@ -35,29 +35,101 @@
 
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
+                        
+                        <Image
+                            Style="{StaticResource Style_Image}"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Source="Fundo.png" />
+
+                        <StackLayout
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2">
+                            
+                        <Image 
+                            Style="{StaticResource Style_ImagePoster}"
+                            Source="Poster.png" />
+
+                        <Label 
+                            Style="{StaticResource Style_LabelSinopse}"                          
+                            Text="Após a morte do rei T'Chaka (John Kani), o príncipe T'Challa (Chadwick Boseman) retorna a Wakanda para a cerimônia de coroação. Nela são reunidas as cinco tribos que compõem o reino, sendo que uma delas, os Jabari, não apoia o atual governo. T'Challa logo recebe o apoio de Okoye (Danai Gurira), a chefe da guarda de Wakanda, da irmã Shuri (Letitia Wright), que coordena a área tecnológica do reino, e também de Nakia (Lupita Nyong'o), a grande paixão do atual Pantera Negra, que não quer se tornar rainha. Juntos, eles estão à procura de Ulysses Klaue (Andy Serkis), que roubou de Wakanda um punhado de vibranium, alguns anos atrás." />
+
+                        <StackLayout
+                            Style="{StaticResource Style_StackLayoutHorarios}">
+
+                            <StackLayout
+                                Style="{StaticResource Style_StackLayoutHorario}">
+
+                                <Label 
+                                    Style="{StaticResource Style_LabelHorario}"
+                                    Text="10:30h" />
+                            </StackLayout>
+
+                            <StackLayout
+                                Style="{StaticResource Style_StackLayoutHorario}">
+
+                                <Label 
+                                    Style="{StaticResource Style_LabelHorario}"
+                                    Text="13:30h" />
+                            </StackLayout>
+                            
+                            <StackLayout
+                                Style="{StaticResource Style_StackLayoutHorario}">
+
+                                <Label 
+                                    Style="{StaticResource Style_LabelHorario}"
+                                    Text="16:30h" />
+                            </StackLayout>
+
+                            <StackLayout
+                                Style="{StaticResource Style_StackLayoutHorario}">
+
+                                <Label 
+                                    Style="{StaticResource Style_LabelHorario}"
+                                    Text="19:30h" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        </StackLayout>
 
                         <Image
-                            Grid.Row="0"
+                            Style="{StaticResource Style_Image}"
+                            Grid.Row="1"
                             Grid.Column="0"
-                            Source="Fundo.png"
-                            Aspect="AspectFit" 
-                            HorizontalOptions="Center" />
+                            Grid.ColumnSpan="2"
+                            Source="FundoValor.png" />
 
-                        <Image 
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Source="Poster.png"
-                            Margin="0, 15"
-                            Aspect="AspectFit"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Start" />
+                        <StackLayout
+                            Style="{StaticResource Style_StackLayoutMeiaEntrada}"
+                            Grid.Row="1"
+                            Grid.Column="0">
+
+                            <Label Text="MEIA"
+                                   Style="{StaticResource Style_SubtituloApp}"/>
+                            <Label Text="R$ 15,00" 
+                                   Style="{StaticResource Style_TituloApp}" />
+                        </StackLayout>
+
+                        <StackLayout
+                            Style="{StaticResource Style_StackLayoutEntradaInteira}"
+                            Grid.Row="1"
+                            Grid.Column="1">
+
+                            <Label Text="INTEIRA"
+                                   Style="{StaticResource Style_SubtituloApp}" />
+                            <Label Text="R$ 30,00"
+                                   Style="{StaticResource Style_TituloApp}" /> 
+                        </StackLayout>
                     </Grid>
                 </StackLayout>
             </ScrollView>

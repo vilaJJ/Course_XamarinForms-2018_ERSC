@@ -1,4 +1,4 @@
-﻿namespace Vagas.Modelos
+﻿namespace Vagas.Models
 {
     public class Vaga
     {

@@ -1,7 +1,13 @@
-﻿namespace Vagas.Models
+﻿using SQLite;
+
+namespace Vagas.Models
 {
+    [Table("Vagas")]
     public class Vaga
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
         public string Nome { get; set; }
         public int Quantidade { get; set; }
         public string Cidade { get; set; }

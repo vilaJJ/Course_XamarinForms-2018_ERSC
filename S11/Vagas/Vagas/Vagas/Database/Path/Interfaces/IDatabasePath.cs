@@ -1,6 +1,6 @@
 ﻿namespace Vagas.Database.Path.Interfaces
 {
-    internal interface IDatabasePath
+    public interface IDatabasePath
     {
         string GetPath(string databaseName);
     }

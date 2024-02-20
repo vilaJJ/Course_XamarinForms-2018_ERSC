@@ -1,63 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Vagas.Paginas.ConsultaVagas">
+             x:Class="Vagas.Paginas.ConsultaVagas"
+             Title="Consulta de Vagas">
     <ContentPage.Content>
-        <StackLayout x:Name="StackLayout_AppBar"
-                     Orientation="Horizontal">
-            
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Vagas" />
-                <Label Text="encontre seu emprego aqui" FontSize="12"/>
-            </StackLayout>
+        <StackLayout Padding="15">
+            <StackLayout x:Name="StackLayout_AppBar"
+                        Orientation="Horizontal">
 
-            <StackLayout Orientation="Horizontal">
-                <Button x:Name="Button_AdicionarVaga" 
-                        Text="Adicionar"
-                        Clicked="Button_AdicionarVaga_Clicked"/>
-                <Button x:Name="Button_MinhasVagas"
-                        Text="Minhas Vagas"
-                        Clicked="Button_MinhasVagas_Clicked"/>
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="StartAndExpand"
+                             VerticalOptions="Center">
+                    <Label Text="Vagas"
+                           HorizontalTextAlignment="Start"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="Button_AdicionarVaga" 
+                            Text="Adicionar"
+                            Clicked="Button_AdicionarVaga_Clicked"/>
+                    <Button x:Name="Button_MinhasVagas"
+                            Text="Minhas Vagas"
+                            Clicked="Button_MinhasVagas_Clicked"/>
+                </StackLayout>
             </StackLayout>
 
             <Entry x:Name="Entry_Pesquisa"
-                   Placeholder="Pesquisar..."/>
+                   Placeholder="Pesquisar..."
+                   TextChanged="Entry_Pesquisa_TextChanged"/>
 
             <Label x:Name="Label_QntdVagasEncontradas"
                    Text="Nenhuma vaga foi encontrada."/>
 
-            <ListView>
+            <ListView x:Name="ListView_Vagas"
+                      HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
 
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
 
-                            <Label Text="{Binding Nome}"
-                                   FontAttributes="Bold"
-                                   Grid.Column="0"/>
-                            <Label Text="{Binding Empresa}"
-                                   Grid.Column="0"/>
-                            <Label Text="{Binding Cidade}"
-                                   Grid.Column="0"/>
+                                <StackLayout>
+                                    <Label Text="{Binding Nome}"
+                                       FontAttributes="Bold"/>
 
-                            <Label x:Name="Label_MaisDetalhes"
-                                   Text="Mais Detalhes"
-                                   Grid.Column="1">
+                                    <Label Text="{Binding Empresa}"/>
 
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer x:Name="TapGestureRecognizer_MaisDetalhes" 
-                                                          Tapped="TapGestureRecognizer_MaisDetalhes_Tapped"
-                                                          CommandParameter="{Binding .}"/>
-                                </Label.GestureRecognizers>
-                            </Label>
-                        </Grid>
+                                    <Label Text="{Binding Cidade}"/>
+                                </StackLayout>
+
+
+                                <Label x:Name="Label_MaisDetalhes"
+                                       Text="Mais Detalhes"
+                                       Grid.Column="1"
+                                       VerticalOptions="Center">
+
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="TapGestureRecognizer_MaisDetalhes" 
+                                                              Tapped="TapGestureRecognizer_MaisDetalhes_Tapped"
+                                                              CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

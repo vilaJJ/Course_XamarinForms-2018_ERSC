@@ -6,14 +6,27 @@ using Xamarin.Forms.Xaml;
 namespace Vagas.Paginas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroVaga : ContentPage
+    public partial class EditarVaga : ContentPage
     {
-        public CadastroVaga()
+        private readonly int _id;
+
+        public EditarVaga(Vaga vaga)
         {
             InitializeComponent();
+
+            _id = vaga.Id;
+
+            CarregarDados(vaga);
         }
 
-        private void Button_Salvar_Clicked(object sender, System.EventArgs e)
+        private void CarregarDados(Vaga vaga)
+        {
+            BindingContext = vaga;
+
+            Switch_TipoContratacao.IsToggled = vaga.TipoContratacao is "PJ";
+        }
+
+        private void Button_Atualizar_Clicked(object sender, System.EventArgs e)
         {
             if (ValidarEntradas() is false)
             {
@@ -22,6 +35,7 @@ namespace Vagas.Paginas
 
             var vaga = new Vaga
             {
+                Id = _id,
                 Nome = Entry_Vaga.Text.Trim(),
                 Quantidade = int.Parse(Entry_Quantidade.Text.Trim()),
                 Empresa = Entry_Empresa.Text.Trim(),
@@ -35,14 +49,14 @@ namespace Vagas.Paginas
 
             using (var databaseHelper = new DatabaseHelper())
             {
-                databaseHelper.Incluir(vaga);
+                databaseHelper.Atualizar(vaga);
             }
 
             Navigation.PopAsync();
 
             DisplayAlert(
                 "Cadastro de Vaga",
-                "Vaga cadastrada com sucesso!",
+                "Vaga atualizada com sucesso!",
                 "OK"
                 );
         }

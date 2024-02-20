@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Vagas.Paginas.CadastroVaga">
+             x:Class="Vagas.Paginas.CadastroVaga"
+             Title="Cadastrar Vaga">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="15">
             <ScrollView Orientation="Vertical">
                 <StackLayout>
                     <Entry x:Name="Entry_Vaga"
@@ -24,7 +25,7 @@
                     <Editor x:Name="Editor_Descricao"
                             Placeholder="Descrição do Cargo"/>
 
-                    <StackLayout>
+                    <StackLayout Orientation="Horizontal">
                         <Label Text="Tipo de contratação"/>
                         <Label Text="CLT"/>
                         <Switch x:Name="Switch_TipoContratacao" />
@@ -38,7 +39,8 @@
                            Placeholder="Email"/>
 
                     <Button x:Name="Button_Salvar"
-                            Text="Salvar"/>
+                            Text="Salvar"
+                            Clicked="Button_Salvar_Clicked"/>
                 </StackLayout>
             </ScrollView>
         </StackLayout>

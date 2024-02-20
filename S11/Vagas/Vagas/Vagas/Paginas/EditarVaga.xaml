@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vaga="clr-namespace:Vagas.Models"
+             x:Class="Vagas.Paginas.EditarVaga"
+             x:DataType="vaga:Vaga"
+             Title="Editar Vaga">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <ScrollView Orientation="Vertical">
+                <StackLayout>
+                    <Entry x:Name="Entry_Vaga"
+                           Placeholder="Vaga"
+                           Text="{Binding Nome}"/>
+
+                    <Entry x:Name="Entry_Empresa"
+                           Placeholder="Empresa"
+                           Text="{Binding Empresa}"/>
+
+                    <Entry x:Name="Entry_Quantidade"
+                           Placeholder="Quantidade"
+                           Text="{Binding Quantidade}"/>
+
+                    <Entry x:Name="Entry_Cidade"
+                           Placeholder="Cidade"
+                           Text="{Binding Cidade}"/>
+
+                    <Entry x:Name="Entry_Salario"
+                           Placeholder="Salário"
+                           Text="{Binding Salario}"/>
+
+                    <Editor x:Name="Editor_Descricao"
+                            Placeholder="Descrição do Cargo"
+                            Text="{Binding DescricaoCargo}"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Tipo de contratação"/>
+                        <Label Text="CLT"/>
+                        <Switch x:Name="Switch_TipoContratacao" />
+                        <Label Text="PJ"/>
+                    </StackLayout>
+                    
+                    <Entry x:Name="Entry_Telefone"
+                           Placeholder="Telefone"
+                           Text="{Binding Telefone}"/>
+
+                    <Entry x:Name="Entry_Email"
+                           Placeholder="Email"
+                           Text="{Binding Email}"/>
+
+                    <Button x:Name="Button_Atualizar"
+                            Text="Atualizar"
+                            Clicked="Button_Atualizar_Clicked"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

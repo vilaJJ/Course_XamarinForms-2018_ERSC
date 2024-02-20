@@ -46,15 +46,15 @@ namespace Vagas.Database
                 lista =
                     _conexao
                     .Table<Vaga>()
-                    .ToList();
+                    .Where(v => v.Nome.ToLower().Contains(pesquisa.ToLower()))
+                    .ToList();                
             }
             else
             {
                 lista =
-                    _conexao
-                    .Table<Vaga>()
-                    .Where(v => v.Nome.ToLower().Contains(pesquisa.ToLower()))
-                    .ToList();          
+                  _conexao
+                  .Table<Vaga>()
+                  .ToList();
             }
 
             return lista;

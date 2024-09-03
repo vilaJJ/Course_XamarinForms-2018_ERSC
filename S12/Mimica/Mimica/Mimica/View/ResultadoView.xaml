@@ -4,9 +4,28 @@
              x:Class="Mimica.View.ResultadoView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout x:Name="StackLayout_Grupo1">
+                <Label x:Name="Label_Grupo1_Nome" 
+                       Text="Grupo 1" 
+                       FontSize="20" />
+                <Label x:Name="Label_Grupo1_Pontuacao" 
+                       Text="Pontos" 
+                       FontSize="64"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout x:Name="StackLayout_Grupo2">
+                <Label x:Name="Label_Grupo2_Nome" 
+                       Text="Grupo 2" 
+                       FontSize="20" />
+                <Label x:Name="Label_Grupo2_Pontuacao" 
+                       Text="Pontos" 
+                       FontSize="64"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+            <Button x:Name="Button_JogarNovamente"
+                    Text="Jogar novamente" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

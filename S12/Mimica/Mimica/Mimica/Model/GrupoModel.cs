@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Mimica.Model
+﻿namespace Mimica.Model
 {
-    internal class GrupoModel
+    public class GrupoModel
     {
+        public ushort Pontuacao { get; private set; } 
+        public string Nome { get; private set; }
+
+        public GrupoModel(string nome) 
+        {
+            Pontuacao = 0;
+            Nome = nome;
+        }
+
+        public void AdicionarPontuacao(ushort pontos)
+        {
+            Pontuacao = pontos;
+        }
     }
 }

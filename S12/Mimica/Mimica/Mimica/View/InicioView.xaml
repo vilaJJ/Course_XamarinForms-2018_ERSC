@@ -1,12 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mimica.View.InicioView">
+             x:Class="Mimica.View.InicioView"
+             Title="Jogo de Mimica">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical">
+            <StackLayout
+                Padding="35">
+                <Label Text="Nome do Grupo 1"/>
+                <Entry 
+                    x:Name="Entry_NomeGrupo1"
+                    Placeholder="(Opcional)" />
+
+                <Label Text="Nome do Grupo 2" />
+                <Entry 
+                    x:Name="Entry_NomeGrupo2" 
+                    Placeholder="(Opcional)" />
+
+                <Label Text="Dificuldade"/>
+                <Picker 
+                    x:Name="Picker_Dificuldade"
+                    SelectedIndex="0" >
+                    <Picker.Items>
+                        <x:String>Aleatório</x:String>
+                        <x:String>Fácil</x:String>
+                        <x:String>Médio</x:String>
+                        <x:String>Difícil</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Tempo para cada palavra (seg.)"/>
+                <Entry x:Name="Entry_TempoCadaPalavra" 
+                       Text="120"
+                       Keyboard="Numeric" />
+
+                <Label Text="Número de Rodadas"/>
+                <Entry x:Name="Entry_NumRodadas" 
+                       Text="7"
+                       Keyboard="Numeric"/>
+
+                <Button x:Name="Button_Iniciar"
+                        Text="Iniciar" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

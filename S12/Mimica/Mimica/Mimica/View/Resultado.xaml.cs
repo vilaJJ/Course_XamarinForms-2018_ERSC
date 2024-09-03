@@ -1,12 +1,12 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Mimica.View
+namespace Mimica.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class JogoView : ContentPage
+    public partial class Resultado : ContentPage
     {
-        public JogoView()
+        public Resultado()
         {
             InitializeComponent();
         }

@@ -1,14 +1,15 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Mimica.View
+namespace Mimica.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class InicioView : ContentPage
+    public partial class Inicio : ContentPage
     {
-        public InicioView()
+        public Inicio()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.Inicio();
         }
     }
 }

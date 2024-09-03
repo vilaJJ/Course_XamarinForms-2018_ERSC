@@ -1,22 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Mimica.View.JogoView">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Mimica.ViewModels" x:DataType="viewmodels:Jogo"
+             x:Class="Mimica.Views.Jogo">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
                 <Label Text="Grupo" />
                 <Label x:Name="Label_PalavraPontuacao" 
-                       Text="Palavra - Pontuação (1)"/>
+                       Text="{Binding PalavraPontuacao}"/>
                 <Label x:Name="Label_Palavra" 
-                       Text="*************"
+                       Text="{Binding Palavra}"
                        HorizontalOptions="CenterAndExpand" />
                 <Button x:Name="Button_Mostrar"
-                        Text="Mostrar" />
+                        Text="Mostrar" 
+                        Command="MostrarPalavra" />
             </StackLayout>
 
-            <StackLayout>
-                <Label Text="200" 
+            <StackLayout
+                IsVisible="{Binding ExibirContagem}">
+                <Label Text="{Binding ContagemRegressiva}" 
                        FontSize="100"
                        HorizontalOptions="CenterAndExpand" />
                 <Label Text="seg" 
@@ -26,17 +28,20 @@
                     <Button x:Name="Button_Acertou"
                             Text="Acertou" 
                             BackgroundColor="LightGreen" 
-                            TextColor="White" />
+                            TextColor="White"
+                            Command="{Binding AcertouPalavra}" />
                     <Button x:Name="Button_Errou"
                             Text="Errou" 
                             BackgroundColor="OrangeRed"
-                            TextColor="White" />
+                            TextColor="White"
+                            Command="{Binding ErrouPalavra}" />
                 </StackLayout>
             </StackLayout>
 
-            <StackLayout>
+            <StackLayout IsVisible="{Binding ExibirBotaoIniciar}">
                 <Button x:Name="Button_Iniciar" 
-                        Text="Iniciar" />
+                        Text="Iniciar"
+                        Command="{Binding IniciarJogo}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

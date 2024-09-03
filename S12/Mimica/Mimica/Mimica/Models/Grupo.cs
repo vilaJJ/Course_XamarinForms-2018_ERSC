@@ -1,11 +1,11 @@
-﻿namespace Mimica.Model
+﻿namespace Mimica.Models
 {
-    public class GrupoModel
+    public class Grupo
     {
         public ushort Pontuacao { get; private set; } 
         public string Nome { get; private set; }
 
-        public GrupoModel(string nome) 
+        public Grupo(string nome) 
         {
             Pontuacao = 0;
             Nome = nome;

@@ -17,13 +17,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\InicioView.xaml">
+    <Compile Update="View\Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Jogo.xaml.cs">
+      <DependentUpon>Jogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\Resultado.xaml.cs">
+      <DependentUpon>Resultado.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\Inicio.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\JogoView.xaml">
+    <EmbeddedResource Update="View\Jogo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\ResultadoView.xaml">
+    <EmbeddedResource Update="View\Resultado.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

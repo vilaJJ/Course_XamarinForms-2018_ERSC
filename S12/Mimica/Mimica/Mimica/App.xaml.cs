@@ -1,4 +1,4 @@
-﻿using Mimica.View;
+﻿using Mimica.Views;
 using Xamarin.Forms;
 
 namespace Mimica
@@ -9,7 +9,7 @@ namespace Mimica
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new InicioView());
+            MainPage = new NavigationPage(new Inicio());
         }
 
         protected override void OnStart()

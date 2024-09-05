@@ -22,6 +22,7 @@ namespace Mimica.ViewModels
 
         public Inicio()
         {
+            Jogo = new Models.Jogo();
             IniciarCommand = new Command(IniciarJogo);
         }
 

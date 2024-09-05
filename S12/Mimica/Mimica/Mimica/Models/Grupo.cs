@@ -2,8 +2,10 @@
 {
     public class Grupo
     {
-        public ushort Pontuacao { get; private set; } 
-        public string Nome { get; private set; }
+        public ushort Pontuacao { get; set; } 
+        public string Nome { get; set; }
+
+        public Grupo() { }
 
         public Grupo(string nome) 
         {

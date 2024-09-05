@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Label Text="Grupo" />
+                <Label Text="{Binding JogoAtual.GrupoAtual.Nome}" />
                 <Label x:Name="Label_PalavraPontuacao" 
                        Text="{Binding PalavraPontuacao}"/>
                 <Label x:Name="Label_Palavra" 
@@ -13,7 +13,8 @@
                        HorizontalOptions="CenterAndExpand" />
                 <Button x:Name="Button_Mostrar"
                         Text="Mostrar" 
-                        Command="MostrarPalavra" />
+                        IsVisible="{Binding ExibirBotaoMostrar}"
+                        Command="{Binding MostrarPalavra}" />
             </StackLayout>
 
             <StackLayout

@@ -9,6 +9,7 @@ namespace Mimica.Views
         public Resultado()
         {
             InitializeComponent();
+            BindingContext = new ViewModels.Resultado();
         }
     }
 }

@@ -1,31 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Mimica.ViewModels" x:DataType="viewmodels:Resultado"
              x:Class="Mimica.Views.Resultado">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout x:Name="StackLayout_Grupo1">
                 <Label x:Name="Label_Grupo1_Nome" 
-                       Text="Grupo 1" 
+                       Text="{Binding JogoAtual.Grupo1.Nome}" 
                        FontSize="20" />
                 <Label x:Name="Label_Grupo1_Pontuacao" 
-                       Text="Pontos" 
+                       Text="{Binding JogoAtual.Grupo1.Pontuacao}" 
                        FontSize="64"
                        HorizontalOptions="Center" />
             </StackLayout>
 
             <StackLayout x:Name="StackLayout_Grupo2">
                 <Label x:Name="Label_Grupo2_Nome" 
-                       Text="Grupo 2" 
+                       Text="{Binding JogoAtual.Grupo2.Nome}" 
                        FontSize="20" />
                 <Label x:Name="Label_Grupo2_Pontuacao" 
-                       Text="Pontos" 
+                       Text="{Binding JogoAtual.Grupo2.Pontuacao}" 
                        FontSize="64"
                        HorizontalOptions="Center" />
             </StackLayout>
 
             <Button x:Name="Button_JogarNovamente"
-                    Text="Jogar novamente" />
+                    Text="Jogar novamente"
+                    Command="{Binding JogarNovamente}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

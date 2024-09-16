@@ -22,8 +22,8 @@ namespace Mimica.Models
 
         public Jogo() 
         {
-            Grupo1 = new Grupo();
-            Grupo2 = new Grupo();
+            Grupo1 = new Grupo(id: 1);
+            Grupo2 = new Grupo(id: 2);
 
             GrupoAtual = Grupo1;
         }

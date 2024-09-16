@@ -7,6 +7,9 @@
         <ScrollView Orientation="Vertical">
             <StackLayout
                 Padding="35">
+                <Label Text="{Binding MensagemErro}" 
+                       IsVisible="{Binding IsVisibleMensagemErro}"
+                       TextColor="Red" />
                 <Label Text="Nome do Grupo 1"/>
                 <Entry 
                     x:Name="Entry_NomeGrupo1"

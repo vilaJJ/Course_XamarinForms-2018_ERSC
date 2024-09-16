@@ -1,13 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Mimica.ViewModels" x:DataType="viewmodels:Jogo"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Mimica.ViewModels" 
+             xmlns:conv="clr-namespace:Mimica.ViewModels.Utilities"
+             x:DataType="viewmodels:Jogo"
              x:Class="Mimica.Views.Jogo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:LabelPontuacaoConverter x:Key="convPontuacao" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Label Text="{Binding JogoAtual.GrupoAtual.Nome}" />
+                <Label Text="{Binding JogoAtual.GrupoAtual.Titulo}" />
                 <Label x:Name="Label_PalavraPontuacao" 
-                       Text="{Binding PalavraPontuacao}"/>
+                       Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}"/>
                 <Label x:Name="Label_Palavra" 
                        Text="{Binding Palavra}"
                        HorizontalOptions="CenterAndExpand" />

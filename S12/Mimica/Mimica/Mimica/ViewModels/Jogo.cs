@@ -110,7 +110,7 @@ namespace Mimica.ViewModels
 
             ExibirBotaoMostrar = true;
 
-            PalavraPontuacao = 3;
+            PalavraPontuacao = 0;
             Palavra = "**********";
 
             IniciarJogo = new Command(IniciarJogoCommand);
@@ -184,6 +184,7 @@ namespace Mimica.ViewModels
 
         private void OnActionUsuarioResponsePalavra()
         {
+            PalavraPontuacao = 0;
             Data.Armazenamento.Jogo.TrocarGrupo();
 
             if (Data.Armazenamento.IsFimDeJogo is false)

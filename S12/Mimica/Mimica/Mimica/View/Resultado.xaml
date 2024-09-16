@@ -6,7 +6,7 @@
         <StackLayout>
             <StackLayout x:Name="StackLayout_Grupo1">
                 <Label x:Name="Label_Grupo1_Nome" 
-                       Text="{Binding JogoAtual.Grupo1.Nome}" 
+                       Text="{Binding JogoAtual.Grupo1.Titulo}" 
                        FontSize="20" />
                 <Label x:Name="Label_Grupo1_Pontuacao" 
                        Text="{Binding JogoAtual.Grupo1.Pontuacao}" 
@@ -16,7 +16,7 @@
 
             <StackLayout x:Name="StackLayout_Grupo2">
                 <Label x:Name="Label_Grupo2_Nome" 
-                       Text="{Binding JogoAtual.Grupo2.Nome}" 
+                       Text="{Binding JogoAtual.Grupo2.Titulo}" 
                        FontSize="20" />
                 <Label x:Name="Label_Grupo2_Pontuacao" 
                        Text="{Binding JogoAtual.Grupo2.Pontuacao}" 

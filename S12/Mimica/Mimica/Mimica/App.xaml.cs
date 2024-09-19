@@ -9,7 +9,7 @@ namespace Mimica
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Inicio());
+            MainPage = new Inicio();
         }
 
         protected override void OnStart()

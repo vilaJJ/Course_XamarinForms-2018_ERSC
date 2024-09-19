@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:Mimica.ViewModels" 
              xmlns:conv="clr-namespace:Mimica.ViewModels.Utilities"
+             xmlns:cab="clr-namespace:Mimica.View.Utilities"
              x:DataType="viewmodels:Jogo"
              x:Class="Mimica.Views.Jogo">
     <ContentPage.Resources>
@@ -11,46 +12,59 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout>
-                <Label Text="{Binding JogoAtual.GrupoAtual.Titulo}" />
-                <Label x:Name="Label_PalavraPontuacao" 
-                       Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}"/>
-                <Label x:Name="Label_Palavra" 
-                       Text="{Binding Palavra}"
-                       HorizontalOptions="CenterAndExpand" />
-                <Button x:Name="Button_Mostrar"
-                        Text="Mostrar" 
-                        IsVisible="{Binding ExibirBotaoMostrar}"
-                        Command="{Binding MostrarPalavra}" />
-            </StackLayout>
+        <StackLayout Spacing="0">
+            <cab:Cabecalho/>
+            <StackLayout Style="{StaticResource Container}">
+                <Frame BorderColor="#F78053"
+                       VerticalOptions="FillAndExpand"
+                       Padding="0">
+                    <StackLayout Style="{StaticResource ContainerEspecial}">
+                        <Label Text="{Binding JogoAtual.GrupoAtual.Titulo}"
+                               FontSize="24"/>
+                        <Label x:Name="Label_PalavraPontuacao" 
+                               Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}"
+                               FontSize="16"/>
+                        <Label x:Name="Label_Palavra" 
+                               Text="{Binding Palavra}"
+                               HorizontalOptions="CenterAndExpand" 
+                               FontSize="64"
+                               FontAttributes="Bold"/>
+                        <Button x:Name="Button_Mostrar"
+                                Text="Mostrar" 
+                                IsVisible="{Binding ExibirBotaoMostrar}"
+                                Command="{Binding MostrarPalavra}" />
+                    </StackLayout>
+                </Frame>
+                
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <StackLayout VerticalOptions="FillAndExpand"
+                                 IsVisible="{Binding ExibirContagem}">
+                        <Label Text="{Binding ContagemRegressiva}" 
+                               FontSize="100"
+                               HorizontalOptions="CenterAndExpand" />
+                        <Label Text="seg" 
+                               HorizontalOptions="CenterAndExpand" />
 
-            <StackLayout
-                IsVisible="{Binding ExibirContagem}">
-                <Label Text="{Binding ContagemRegressiva}" 
-                       FontSize="100"
-                       HorizontalOptions="CenterAndExpand" />
-                <Label Text="seg" 
-                       HorizontalOptions="CenterAndExpand" />
-
-                <StackLayout Orientation="Horizontal">
-                    <Button x:Name="Button_Acertou"
-                            Text="Acertou" 
-                            BackgroundColor="LightGreen" 
-                            TextColor="White"
-                            Command="{Binding AcertouPalavra}" />
-                    <Button x:Name="Button_Errou"
-                            Text="Errou" 
-                            BackgroundColor="OrangeRed"
-                            TextColor="White"
-                            Command="{Binding ErrouPalavra}" />
+                        <StackLayout Orientation="Horizontal"
+                                     HorizontalOptions="CenterAndExpand">
+                            <Button x:Name="Button_Acertou"
+                                    Text="Acertou" 
+                                    BackgroundColor="#00B22D" 
+                                    TextColor="#FFFFFF"
+                                    Command="{Binding AcertouPalavra}"/>
+                            <Button x:Name="Button_Errou"
+                                    Text="Errou" 
+                                    BackgroundColor="#FF4000"
+                                    TextColor="#FFFFFF"
+                                    Command="{Binding ErrouPalavra}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <Button x:Name="Button_Iniciar" 
+                            Text="Iniciar"
+                            IsVisible="{Binding ExibirBotaoIniciar}"
+                            Command="{Binding IniciarJogo}"/>
                 </StackLayout>
-            </StackLayout>
-
-            <StackLayout IsVisible="{Binding ExibirBotaoIniciar}">
-                <Button x:Name="Button_Iniciar" 
-                        Text="Iniciar"
-                        Command="{Binding IniciarJogo}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

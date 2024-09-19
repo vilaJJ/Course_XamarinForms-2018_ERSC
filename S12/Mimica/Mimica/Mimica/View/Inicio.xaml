@@ -1,52 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:Mimica.ViewModels" x:DataType="viewmodels:Inicio"
+             xmlns:cab="clr-namespace:Mimica.View.Utilities"
              x:Class="Mimica.Views.Inicio"
              Title="Jogo de Mimica">
     <ContentPage.Content>
         <ScrollView Orientation="Vertical">
-            <StackLayout
-                Padding="35">
-                <Label Text="{Binding MensagemErro}" 
-                       IsVisible="{Binding IsVisibleMensagemErro}"
-                       TextColor="Red" />
-                <Label Text="Nome do Grupo 1"/>
-                <Entry 
-                    x:Name="Entry_NomeGrupo1"
-                    Placeholder="(Opcional)" 
-                    Text="{Binding Jogo.Grupo1.Nome}" />
+            <StackLayout Spacing="0">
+                <cab:Cabecalho />
+                <StackLayout Style="{StaticResource Container}">
+                    <StackLayout
+                        Padding="35">
+                        <Label Text="{Binding MensagemErro}" 
+                               IsVisible="{Binding IsVisibleMensagemErro}"
+                               TextColor="Red" />
+                        <Label Text="Nome do Grupo 1"/>
+                        <Entry 
+                            x:Name="Entry_NomeGrupo1"
+                            Placeholder="(Opcional)" 
+                            Text="{Binding Jogo.Grupo1.Nome}" />
 
-                <Label Text="Nome do Grupo 2" />
-                <Entry 
-                    x:Name="Entry_NomeGrupo2" 
-                    Placeholder="(Opcional)"
-                    Text="{Binding Jogo.Grupo2.Nome}"/>
+                        <Label Text="Nome do Grupo 2" />
+                        <Entry 
+                            x:Name="Entry_NomeGrupo2" 
+                            Placeholder="(Opcional)"
+                            Text="{Binding Jogo.Grupo2.Nome}"/>
 
-                <Label Text="Dificuldade"/>
-                <Picker 
-                    x:Name="Picker_Dificuldade"
-                    SelectedIndex="{Binding Jogo.IndiceDificuldade}" >
-                    <Picker.Items>
-                        <x:String>Aleatório</x:String>
-                        <x:String>Fácil</x:String>
-                        <x:String>Médio</x:String>
-                        <x:String>Difícil</x:String>
-                    </Picker.Items>
-                </Picker>
+                        <Label Text="Dificuldade"/>
+                        <Picker 
+                            x:Name="Picker_Dificuldade"
+                            SelectedIndex="{Binding Jogo.IndiceDificuldade}" >
+                            <Picker.Items>
+                                <x:String>Aleatório</x:String>
+                                <x:String>Fácil</x:String>
+                                <x:String>Médio</x:String>
+                                <x:String>Difícil</x:String>
+                            </Picker.Items>
+                        </Picker>
 
-                <Label Text="Tempo para cada palavra (seg.)"/>
-                <Entry x:Name="Entry_TempoCadaPalavra" 
-                       Text="{Binding Jogo.TempoPalavra}"
-                       Keyboard="Numeric" />
+                        <Label Text="Tempo para cada palavra (seg.)"/>
+                        <Entry x:Name="Entry_TempoCadaPalavra" 
+                               Text="{Binding Jogo.TempoPalavra}"
+                               Keyboard="Numeric" />
 
-                <Label Text="Número de Rodadas"/>
-                <Entry x:Name="Entry_NumRodadas" 
-                       Text="{Binding Jogo.Rodadas}"
-                       Keyboard="Numeric"/>
+                        <Label Text="Número de Rodadas"/>
+                        <Entry x:Name="Entry_NumRodadas" 
+                               Text="{Binding Jogo.Rodadas}"
+                               Keyboard="Numeric"/>
 
-                <Button x:Name="Button_Iniciar"
-                        Text="Iniciar"
-                        Command="{Binding IniciarCommand}"/>
+                        <Button x:Name="Button_Iniciar"
+                                Text="Iniciar"
+                                Command="{Binding IniciarCommand}"/>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

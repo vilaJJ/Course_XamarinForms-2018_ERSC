@@ -197,12 +197,19 @@ namespace Mimica.ViewModels
         {
             short tempo = Data.Armazenamento.Jogo.TempoPalavra;
 
+            void atualizarTextoContagem(bool isTempoEsgotado = false)
+            {
+                ContagemRegressiva = isTempoEsgotado is true ? "Esgotou o tempo" : tempo.ToString();
+            }
+
+            atualizarTextoContagem();
+
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
                 tempo--;
 
                 bool isTempoEsgotado = tempo < 0;
-                ContagemRegressiva = isTempoEsgotado is true ? "Esgotou o tempo" : tempo.ToString();
+                atualizarTextoContagem(isTempoEsgotado);
 
                 return isTempoEsgotado is false;
             });
